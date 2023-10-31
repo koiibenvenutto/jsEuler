@@ -46,7 +46,6 @@ for (i = 0; i < numberSet.length; i += 60) {
 
 console.log(grid);
 
-let keepGoing = true;
 const combinations = new Set();
 
 function down4(r, c) {
