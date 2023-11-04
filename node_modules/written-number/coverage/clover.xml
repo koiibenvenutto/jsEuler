@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1592777649943" clover="3.2.0">
+  <project timestamp="1592777649943" name="All files">
+    <metrics statements="96" coveredstatements="95" conditionals="115" coveredconditionals="108" methods="3" coveredmethods="3" elements="214" coveredelements="206" complexity="0" loc="96" ncloc="96" packages="1" files="2" classes="2"/>
+    <file name="index.js" path="/Users/yamadapc/projects/js-written-number/lib/index.js">
+      <metrics statements="88" coveredstatements="87" conditionals="111" coveredconditionals="104" methods="2" coveredmethods="2"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="32" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="33" count="30" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="51" count="9221651" type="cond" truecount="2" falsecount="0"/>
+      <line num="52" count="9221651" type="stmt"/>
+      <line num="54" count="9221651" type="cond" truecount="2" falsecount="0"/>
+      <line num="55" count="4" type="stmt"/>
+      <line num="58" count="9221647" type="stmt"/>
+      <line num="60" count="9221647" type="cond" truecount="2" falsecount="0"/>
+      <line num="64" count="9221647" type="cond" truecount="4" falsecount="0"/>
+      <line num="65" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="69" count="3" type="stmt"/>
+      <line num="72" count="9221647" type="cond" truecount="2" falsecount="0"/>
+      <line num="73" count="9221647" type="stmt"/>
+      <line num="76" count="9221647" type="cond" truecount="2" falsecount="0"/>
+      <line num="77" count="650458" type="stmt"/>
+      <line num="79" count="650458" type="stmt"/>
+      <line num="80" count="650458" type="stmt"/>
+      <line num="82" count="650458" type="stmt"/>
+      <line num="83" count="2601832" type="stmt"/>
+      <line num="84" count="2601832" type="stmt"/>
+      <line num="88" count="9221647" type="stmt"/>
+      <line num="89" count="9221647" type="cond" truecount="2" falsecount="0"/>
+      <line num="93" count="9221647" type="cond" truecount="2" falsecount="0"/>
+      <line num="94" count="9132301" type="cond" truecount="2" falsecount="0"/>
+      <line num="95" count="9088726" type="cond" truecount="2" falsecount="0"/>
+      <line num="96" count="4460917" type="cond" truecount="2" falsecount="0"/>
+      <line num="97" count="2397030" type="stmt"/>
+      <line num="99" count="2063887" type="stmt"/>
+      <line num="100" count="2063887" type="stmt"/>
+      <line num="102" count="2063887" type="cond" truecount="2" falsecount="0"/>
+      <line num="103" count="2044004" type="cond" truecount="2" falsecount="0"/>
+      <line num="107" count="115742" type="stmt"/>
+      <line num="109" count="1928262" type="stmt"/>
+      <line num="115" count="2063887" type="stmt"/>
+      <line num="116" count="27040582" type="stmt"/>
+      <line num="119" count="27040582" type="cond" truecount="2" falsecount="0"/>
+      <line num="120" count="24976695" type="stmt"/>
+      <line num="122" count="27040582" type="stmt"/>
+      <line num="124" count="27040582" type="stmt"/>
+      <line num="126" count="27040582" type="cond" truecount="2" falsecount="0"/>
+      <line num="127" count="3906383" type="stmt"/>
+      <line num="129" count="3906383" type="cond" truecount="2" falsecount="0"/>
+      <line num="131" count="941655" type="cond" truecount="2" falsecount="0"/>
+      <line num="135" count="941655" type="cond" truecount="2" falsecount="0"/>
+      <line num="136" count="876576" type="cond" truecount="2" falsecount="0"/>
+      <line num="138" count="65079" type="cond" truecount="2" falsecount="2"/>
+      <line num="140" count="941655" type="stmt"/>
+      <line num="144" count="2964728" type="cond" truecount="2" falsecount="0"/>
+      <line num="145" count="752993" type="stmt"/>
+      <line num="146" count="2211735" type="cond" truecount="7" falsecount="0"/>
+      <line num="148" count="119355" type="stmt"/>
+      <line num="149" count="2092380" type="cond" truecount="10" falsecount="0"/>
+      <line num="151" count="71369" type="stmt"/>
+      <line num="153" count="2021011" type="cond" truecount="5" falsecount="0"/>
+      <line num="158" count="2021011" type="cond" truecount="4" falsecount="0"/>
+      <line num="161" count="2021011" type="cond" truecount="4" falsecount="0"/>
+      <line num="164" count="2964728" type="cond" truecount="2" falsecount="0"/>
+      <line num="168" count="93546" type="stmt"/>
+      <line num="169" count="93546" type="stmt"/>
+      <line num="172" count="2871182" type="stmt"/>
+      <line num="174" count="2871182" type="cond" truecount="2" falsecount="0"/>
+      <line num="187" count="2871182" type="stmt"/>
+      <line num="188" count="2871182" type="stmt"/>
+      <line num="191" count="2063887" type="stmt"/>
+      <line num="192" count="2063887" type="stmt"/>
+      <line num="194" count="2063887" type="cond" truecount="2" falsecount="0"/>
+      <line num="200" count="2116" type="stmt"/>
+      <line num="206" count="2063887" type="cond" truecount="2" falsecount="0"/>
+      <line num="207" count="129519" type="stmt"/>
+      <line num="208" count="243421" type="stmt"/>
+      <line num="211" count="2063887" type="stmt"/>
+      <line num="212" count="2063887" type="stmt"/>
+      <line num="216" count="2397030" type="stmt"/>
+      <line num="217" count="2397030" type="stmt"/>
+      <line num="218" count="2397030" type="cond" truecount="1" falsecount="1"/>
+      <line num="219" count="2397030" type="stmt"/>
+      <line num="223" count="0" type="cond" truecount="0" falsecount="2"/>
+    </file>
+    <file name="util.js" path="/Users/yamadapc/projects/js-written-number/lib/util.js">
+      <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <line num="12" count="12065600" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="12065600" type="stmt"/>
+      <line num="14" count="12065600" type="stmt"/>
+      <line num="15" count="12065600" type="stmt"/>
+      <line num="16" count="36196794" type="stmt"/>
+      <line num="17" count="36196794" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="12065600" type="stmt"/>
+      <line num="21" count="3" type="stmt"/>
+    </file>
+  </project>
+</coverage>
