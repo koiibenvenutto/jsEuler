@@ -19,12 +19,9 @@ const bigTriangle = [
 
 function maxPath(triangle) {
   for (let i = triangle.length - 2; i >= 0; i--) {
-    console.log(`i: ${i}`);
     for (let j = 0; j < triangle[i].length; j++) {
-      console.log(`j: ${j}`);
       triangle[i][j] =
         triangle[i][j] + Math.max(triangle[i + 1][j], triangle[i + 1][j + 1]);
-      // console.log(triangle);
     }
   }
   console.log(triangle);
