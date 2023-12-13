@@ -126,7 +126,7 @@ const gridTraveler = (m, n, memo = {}) => {
   return memo[m + "," + n];
 };
 
-console.log(gridTraveler(200, 100));
+console.log(gridTraveler(20, 10));
 
 // Now how do I use memoization here? Is it applicable?
 // Nice!
