@@ -1,5 +1,5 @@
-const littlePyramid = [[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]];
-const bigPyramid = [
+const littleTriangle = [[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]];
+const bigTriangle = [
   [75],
   [95, 64],
   [17, 47, 82],
@@ -16,26 +16,18 @@ const bigPyramid = [
   [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
   [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23],
 ];
-// First I'm going to start by making a function that can just walk through the pyramid using adjacent numbers. Then I'll add logic to make it choose the highest one. If that doesn't work, then I'll have it look a little into the future as well :)
-function greatestPath(pyramid) {
-  // Declaring a variable to keep track of the paths sum as it walks from top to bottom. We'll initialize it as the value we're starting from because we know for certain that it will be part of the sum no matter what
-  let sum = pyramid[0][0];
-  console.log(sum);
-  //   This array keeps track of the adjacent numbers which the path can choose from
-  let xPos = 0;
 
-  //   y Pos is the index for the pyramid row AKA position on the y axis
-  for (let yPos = 0; yPos < pyramid.length - 1; yPos++) {
-    if (pyramid[yPos + 1][xPos] <= pyramid[yPos + 1][xPos + 1]) {
-      sum += pyramid[yPos + 1][xPos + 1];
-      // We need to update where we are on the x pos which is a little tricky to think about because every row appears to be backsliding so to speak on the x axis in relation to the row above it, which gives it the pyramid shape. In practice though it's simple because it's just like a slanted grid where every row is one longer than the one above it :D
-      xPos++;
-    } else {
-      sum += pyramid[yPos + 1][xPos];
+function maxPath(triangle) {
+  for (let i = triangle.length - 2; i >= 0; i--) {
+    for (let j = 0; j < triangle[i].length; j++) {
+      triangle[i][j] =
+        triangle[i][j] + Math.max(triangle[i + 1][j], triangle[i + 1][j + 1]);
     }
-    // Now we need to update the adjacent options variable so that it's corrent for the next iteration of the loop, but it depends on which adjacent option was chosen
   }
-  return sum;
+  console.log(triangle);
+  console.log(triangle[0][0]);
 }
 
-console.log(greatestPath(littlePyramid));
+maxPath(bigTriangle);
+
+// What about filling in a triangle of blanks with the sums I find.
