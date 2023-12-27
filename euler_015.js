@@ -114,16 +114,17 @@
 // Here's another way to think about it that's more in line with this youtube video (https://www.youtube.com/watch?v=oBt53YbR9Kk) rather than the project euler problem:
 
 const gridTraveler = (m, n, memo = {}) => {
-  if (m === 0 || n === 0) return null;
+  const key1 = m + "," + n;
+  const key2 = n + "," + m;
+  if (m === 0 || n === 0) return 0;
   if (m === 1) return 1;
   if (n === 1) return 1;
-  if (m + "," + n in memo) return memo[m + "," + n];
-  if (n + "," + m in memo) return memo[n + "," + m];
+  if (key1 in memo || key2 in memo) return memo[key1];
 
-  memo[m + "," + n] = memo[n + "," + m] =
+  memo[key1] = memo[key2] =
     gridTraveler(m - 1, n, memo) + gridTraveler(m, n - 1, memo);
 
-  return memo[m + "," + n];
+  return memo[key1];
 };
 
 console.log(gridTraveler(20, 10));
