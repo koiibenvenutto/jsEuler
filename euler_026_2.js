@@ -2,15 +2,51 @@ function longestRep(n, memo = {}) {
   for (let d = 1; d < n; d++) {
     if (/*factorize(d).filter((isPrime).hasPrimeFactorsNot2or5)*/ true) {
       let expansion = [...(1 / d).toFixed(d * 2)].splice(2).map(Number);
-      for (let i = 0; i < expansion.length; i++) {
-        let sequence = expansion.slice(0, i);
-        let remainder = expansion.slice(i, sequence.length);
-        if (sequence) {
-        }
-      }
     }
   }
 }
+
+// This is how I will get rid of the first two digits of the array and expand out the decimal easily...
+// let d = 17;
+// let expansion = [...(1 / d).toFixed(d * 2)].splice(2).map(Number);
+
+// console.log(expansion);
+
+// const memo = {};
+// //                          i
+// //                          j
+// //                 0  1  2  3  4  5  6  7  8  -------> length = 9, last index = 8
+// const expansion = [1, 2, 3, 1, 2, 3, 1, 2, 3];
+
+// for (let i = 1; i < expansion.length; i++) {
+//   console.log("---------");
+//   console.log(`i: ${i}`);
+//   let seq = expansion.slice(0, i);
+
+//   console.log(seq);
+
+//   let j = i;
+//   let foundRep = true;
+//   while (j < expansion.length - seq.length) {
+//     console.log(`j: ${j}`);
+//     let nextSeq = expansion.slice(j, j + seq.length);
+//     console.log(nextSeq);
+//     if (!arraysAreEqual(seq, nextSeq)) {
+//       foundRep = false;
+//     }
+//     j += seq.length;
+//   }
+
+//   console.log(foundRep);
+
+//   if (foundRep === true) {
+//     memo["n"] = seq;
+//   }
+// }
+
+// console.log(memo);
+
+// Just realized there's a way easier way to do this:
 
 function arraysAreEqual(array1, array2) {
   // Check if the arrays are the same length
@@ -70,8 +106,8 @@ for (let i = 1; i < expansion.length; i++) {
 
   if (
     arraysAreEqual(seq, nextSeq) &&
-    seq.length > longestCycle.length &&
-    notMultiple(seq, longestCycle)
+    notMultiple(seq, longestCycle) &&
+    seq.length > longestCycle.length
   ) {
     longestCycle = seq;
     console.log("SEQ == NEXTSEQ && not multiple");
@@ -79,7 +115,6 @@ for (let i = 1; i < expansion.length; i++) {
 }
 
 // This code ensures that once a long rep has been found that it truly is the entire length of the expansion and therefore a real repeating cycle
-// Only performed once at the end, I suppose it could lead to a false positive but the chances are astronomically low...
 let cycleLength = longestCycle.length;
 let checkReps = Math.floor(expansion.length / cycleLength);
 let checkHere = (checkReps - 1) * cycleLength;
