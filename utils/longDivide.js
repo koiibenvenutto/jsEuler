@@ -30,9 +30,9 @@ function longDivide(n, d, resolution = n.toString().length) {
   return result;
 }
 
-console.log(longDivide(1, 584, 50).join(""));
-console.log(longDivide(1, 17, 50).join(""));
-console.log(longDivide(1, 997, 50).join(""));
+// console.log(longDivide(1, 584, 50).join(""));
+// console.log(longDivide(1, 17, 50).join(""));
+// console.log(longDivide(1, 997, 50).join(""));
 
 // 7 / 53 to a resolution of 20 decimal places
 // console.log(longDivide(7, 53, 20));
