@@ -1,3 +1,5 @@
+// Doesn't work for negative numbers or maybe has some other bugs watch out me!!!
+
 const factorize = (n) => {
   const factors = [];
   for (let i = 2; i < n; i++) {
