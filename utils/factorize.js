@@ -6,8 +6,9 @@ const factorize = (n) => {
   return factors;
 };
 
-console.log(factorize(10));
+// console.log(factorize(10));
+// [2,5]
+// console.log(factorize(7));
+// Expected return [];
 
 module.exports = factorize;
-
-
