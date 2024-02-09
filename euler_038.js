@@ -18,9 +18,10 @@ function pandigitalMultiples(n) {
       )
         break;
 
-      // Now we know that the product has all unique digits...
-      // is not going to make the concatProduct longer than 9 digits
-      // and has no shared digits with the current concatProduct
+      // To get to this point...
+      // we know that the product has all unique digits...
+      // is not longer than 9 digits...
+      // and has no duplicate digits
 
       if (concatProduct.length === 9) {
         if (Number(concatProduct.join("")) > largest) {
@@ -37,5 +38,3 @@ function pandigitalMultiples(n) {
 }
 
 console.log(pandigitalMultiples(10_000));
-
-// .toString().split("").sort()
