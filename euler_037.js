@@ -1,8 +1,5 @@
-// From 035:
-
 const isPrime = require("./utils/isPrime");
 
-// need to remake the numRotator...into a num truncator...
 const numTruncator = (n, fromRight = true) => {
   if (fromRight) {
     return Number(n.toString().slice(0, n.toString().length - 1));
@@ -10,8 +7,6 @@ const numTruncator = (n, fromRight = true) => {
     return Number(n.toString().slice(1));
   }
 };
-
-// //console.log(numRotator(123));
 
 function truncPrimes(n) {
   const truncatablePrimes = new Set();
@@ -46,8 +41,6 @@ function truncPrimes(n) {
     (accumulator, currentValue) => currentValue + accumulator,
     0
   );
-
-  //   return [...truncatablePrimes];
 }
 
 console.log(truncPrimes(10_000_000));
