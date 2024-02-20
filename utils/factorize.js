@@ -13,4 +13,7 @@ const factorize = (n) => {
 // console.log(factorize(7));
 // Expected return [];
 
+console.log(factorize(640));
+console.log(factorize(16384));
+
 module.exports = factorize;

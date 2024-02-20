@@ -69,4 +69,25 @@ function permute3(string) {
 
 console.log(permute3("1234567"));
 
+// Fascinating: this one is actually slower! But it still works :) How could I make it faster? I guess the original one is just so much more efficient at perumting because it only creates viable options...
+function largestPanPrimeAlt() {
+  const pandigital = "123456789";
+  let largestPrime = 0;
+  for (let i = 1; i <= 987654321; i++) {
+    if (isPrime(i)) {
+      if (
+        i.toString().split("").map(Number).sort().join("") ==
+          pandigital.slice(0, i.toString().length) &&
+        i > largestPrime
+      ) {
+        largestPrime = i;
+      }
+    }
+  }
+
+  return largestPrime;
+}
+
+console.log(largestPanPrimeAlt());
+
 // So ultimately i got the solution, I was pretty effecient about how much work I put in to get there as well. The thing is that this code doesn't exactly handle the problem automatically. It turns out that there are no 9 digit pandigital primes so the largest is actually 7 digits long which I got through manually entering pandigital numbers of different lengths to permute through...So if I wanted to make a more elegant and workable solution I would need to add the capabitlity for this to work through pandigital numbers of various lengths. I wonder if this would be faster than just looping through all numbers, checking if they're pandigital and then checking if they're prime?? Well all stuff to explore another time.
