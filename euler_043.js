@@ -1,58 +1,6 @@
-const factorial = require("./utils/factorial");
-const isPrime = require("./utils/isPrime");
+const permute = require("./utils/permute");
 
-function permute3(string) {
-  if (string.length < 2) return [string];
-
-  const table = Array(Number(factorial(string.length))).fill(0);
-  table[0] = string;
-
-  let sum = 0;
-
-  let arr = string.split("");
-
-  // loop through entire table
-  for (let n = 1; n < table.length; n++) {
-    // Find first character
-    for (let i = arr.length - 2; i >= 0; i--) {
-      if (arr[i + 1] > arr[i]) {
-        // Find ceiling
-        let ceil = Infinity;
-        let j = arr.length;
-        while (j > i) {
-          // once ceiling is found, swap it with first character and then sort in ascending order everything after og position of first char, then break the j loop
-          if (arr[j] > arr[i] && arr[j] < ceil) {
-            ceil = arr[j];
-            break;
-          }
-          j--;
-        }
-
-        // swap the positions of chars at i and j
-        let temp = arr[i];
-        arr[i] = ceil;
-        arr[j] = temp;
-
-        // put all the characters after the original position of the first character in ascending order
-        let right = arr.slice(i + 1);
-        right.sort((a, b) => a - b);
-
-        arr.splice(i + 1, right.length, ...right);
-        let result = arr.join("");
-        table[n] = result;
-        break;
-      }
-    }
-
-    if (hasProperty(table[n])) {
-      sum += Number(table[n]);
-    }
-  }
-
-  return sum;
-}
-
-// Here we're going to make a helper function that will check if a given pandigital has the property described in problem 43. If it does, then we're going to add it to the sum.
+// permute util function takes a string and test function to be run on every permutation of the string allowing for easy testing. It will return an array off all permutations that pass the test.
 
 function hasProperty(string) {
   let primes = [2, 3, 5, 7, 11, 13, 17];
@@ -72,4 +20,8 @@ function hasProperty(string) {
 
 // console.log(hasProperty("1406357289"));
 
-console.log(permute3("0123456789"));
+console.log(
+  permute("0123456789", hasProperty)
+    .map(Number)
+    .reduce((currentValue, accumulator) => accumulator + currentValue, 0)
+);
