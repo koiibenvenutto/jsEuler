@@ -46,9 +46,9 @@ function triangleWords(wordBank) {
   const valueBank = wordBank
     .map((word) => wordToValue(word))
     .sort((a, b) => a - b);
-  console.log(valueBank);
+  // console.log(valueBank);
   const highestValueWord = valueBank.pop();
-  console.log(highestValueWord);
+  // console.log(highestValueWord);
 
   const triangleNumbers = (limit) => {
     // console.log(limit);
@@ -56,14 +56,14 @@ function triangleWords(wordBank) {
     const tNs = [0];
     while (tNs[tNs.length - 1] <= limit) {
       let currentTn = n * 0.5 * (n + 1);
-      console.log(currentTn);
+      // console.log(currentTn);
       tNs.push(currentTn);
       n++;
     }
     return tNs.slice(0, tNs.length - 1);
   };
   const tNumbers = triangleNumbers(highestValueWord);
-  console.log(tNumbers);
+  // console.log(tNumbers);
 
   const triangleWordBank = valueBank.filter(
     (value) => tNumbers.indexOf(value) !== -1
