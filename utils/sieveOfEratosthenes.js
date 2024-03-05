@@ -1,6 +1,6 @@
 function sieveOfEratosthenes(n) {
   const table = Array(n + 1).fill(true);
-  console.log(table);
+  // console.log(table);
   table[0] = 0;
   for (let i = 2; i < Math.sqrt(n); i++) {
     for (let j = i; j * i <= n; j++) {
@@ -16,4 +16,6 @@ function sieveOfEratosthenes(n) {
   return result;
 }
 
-console.log(sieveOfEratosthenes(20));
+// console.log(sieveOfEratosthenes(20));
+
+module.exports = sieveOfEratosthenes;
