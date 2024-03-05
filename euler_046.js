@@ -16,6 +16,7 @@ const squares = (limit) => {
 function goldbachsOther(limit) {
   // This is for the y loop where we'll cycle through all odd composite numbers
   const ocArray = oddComposites(limit);
+  console.log(ocArray);
 
   // This is for the
   const primeArray = primeSieve(limit);
@@ -23,15 +24,25 @@ function goldbachsOther(limit) {
   // squares
   const squaresArray = squares(limit);
 
-  let result = 0;
+  let y, a, b;
+  let equation;
+  for (y = 0; ocArray[y] < limit; y++) {
+    equation = false;
+    for (a = 0; !equation && primeArray[a] < limit; a++) {
+      for (b = 0; !equation && squaresArray[b] < limit; b++) {
+        equation = ocArray[y] === primeArray[a] + 2 * squaresArray[b];
 
-  for (let y = 0; ocArray[y] < limit; y++) {
-    for (let a = 0; primeArray[a] < limit; a++) {
-      for (let b = 0; squaresArray[b] < limit; b++) {
-        for (let c = 0; squaresArray[c] < limit; c++) {}
+        if (equation) {
+          console.log(
+            `${ocArray[y]} = ${primeArray[a]} + 2 * ${squaresArray[b]}`
+          );
+          console.log(equation);
+        }
       }
     }
+    if (!equation) return ocArray[y];
   }
+  return "all oddComposites test true so far. :P";
 }
 
-console.log(goldbachsOther(10));
+console.log(goldbachsOther(10000));
