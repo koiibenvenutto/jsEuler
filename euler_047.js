@@ -2,17 +2,18 @@ const primeSieve = require("./utils/sieveOfEratosthenes");
 
 function distinctPrimeFactors(limit) {
   const primes = primeSieve(limit);
+  const consecutiveIntegers = [];
   for (let n = 2; n < limit; n++) {
     console.log(`n ${n}`);
-    for (let a = 1; a < n && !lastN; a++) {
+    for (let a = 1; a < n; a++) {
       console.log(`- a: ${a}`);
       for (let b = a + 1; a * b < limit; b++) {
         console.log(`-- b: ${b}`);
         if (primes[a] * primes[b] === n) {
           console.log(n);
-          if (lastN) return [n - 1, n];
-          lastN = true;
-          break;
+          if (consecutiveIntegers[consecutiveIntegers.length - 1] === n - 1)
+            return [n - 1, n];
+          consecutiveIntegers.push(n);
         }
       }
     }
