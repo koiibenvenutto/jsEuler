@@ -1,30 +1,32 @@
 const primeSieve = require("./utils/sieveOfEratosthenes");
 
-function distinctPrimeFactors(limit) {
+function distinctPrimeFactors(limit, consecLength) {
   const primes = primeSieve(limit);
-  const consecutiveIntegers = [];
+  const a_1 = [];
+
   for (let n = 2; n < limit; n++) {
-    console.log(`n ${n}`);
-    for (let a = 1; a < n; a++) {
-      console.log(`- a: ${a}`);
-      for (let b = a + 1; a * b < limit; b++) {
-        console.log(`-- b: ${b}`);
-        if (primes[a] * primes[b] === n) {
-          console.log(n);
-          if (consecutiveIntegers[consecutiveIntegers.length - 1] === n - 1)
-            return [n - 1, n];
-          consecutiveIntegers.push(n);
+    const a_2 = [];
+    for (let a = 1; primes[a] < n; a++) {
+      if (n % primes[a] === 0) {
+        a_2.push(primes[a]);
+        if (a_2.length >= consecLength) {
+          a_1.push(n);
+          break;
         }
       }
     }
+
+    if (a_1.length > consecLength) a_1.shift();
+
+    if (a_1.length === consecLength) {
+      let consecutive = true;
+      for (let i = 0; i < a_1.length - 1; i++) {
+        if (a_1[i] + 1 !== a_1[i + 1]) consecutive = false;
+      }
+      if (consecutive) return a_1[0];
+    }
   }
+  return `Didn't find it`;
 }
 
-console.log(distinctPrimeFactors(16));
-
-// Since these inner loops are only going to be prime is makes a lot more sense to start by generating an array of prime numbers up to the given limit and looping through that rather than just incrimenting by 1...and I believe that this removes the need for the isPrime function...
-
-//   I know there's a better way to do this but I just need to check if there's two consecutive numbers with distinct primes here. Doesn't make sense to story an array of all n's with distinct prime factors...Only need to keep track of them if they are consecutive. So if an n has two distinct prime factors...then we need to check the next one...How do I go about this...
-// Ahh this can be done here... by only pushing if it's consecutive to the last element
-//   Or why don't we just clear the array every time that it's false... all we need to know about is the last one...Don't worry about thinking ahead just yet.
-// Now it will only push n if it's consecutive to the last element in the consecutive integers array...
+console.log(distinctPrimeFactors(1_000_000, 4));
