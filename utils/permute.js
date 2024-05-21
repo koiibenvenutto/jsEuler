@@ -6,6 +6,8 @@ function permute(string, test) {
   const table = Array(Number(factorial(string.length))).fill(0);
   table[0] = string;
 
+  // console.log(table);
+
   let truePermutations = [];
 
   let arr = string.split("");
@@ -43,7 +45,7 @@ function permute(string, test) {
       }
     }
 
-    if (test(table[n])) {
+    if (table[n] !== 0 && test(table[n])) {
       truePermutations.push(table[n]);
     }
   }
@@ -51,4 +53,10 @@ function permute(string, test) {
   return truePermutations;
 }
 
+// function test(n) {
+//   return true;
+// }
+
 module.exports = permute;
+
+// console.log(permute("123", test));
